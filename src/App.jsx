@@ -11,10 +11,7 @@ const App = () => {
     const [selectedSort, setSelectedSort] = useState('default')
 
     const completeTodo = (id) => {
-        const todosCopy = [...todos]
-        const taskForCompletion = todosCopy.find(t => t.id === id);
-        taskForCompletion.isCompleted = !taskForCompletion.isCompleted
-        setTodos(todosCopy)
+        TodoService.completeTodoById(id).then(fetchTodos)
     }
 
     const deleteTodo = (id) => {

@@ -32,4 +32,14 @@ export default class TodoService {
             console.log(e)
         }
     }
+
+    static async completeTodoById(id) {
+        try {
+            console.log("Trying to complete todo by id = ", id)
+            // await axios.patch('http://localhost:8080/todos/' + id + '/complete')
+            await axios.patch('http://91.201.114.41:8080/todos/' + id + '/complete')
+        } catch (e) {
+            console.log(e)
+        }
+    }
 }
